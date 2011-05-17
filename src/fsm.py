@@ -5,8 +5,7 @@ This module can be used to build and describe finite-state automata.
     Author: Slawek Ligus <root@ooz.ie>
     http://python.finitestatemachine.org/
 
-
-Classes overview:
+Overview of classes:
 
     State -- a class representing a state which can be used in a finite state
         machine of any type.
@@ -35,7 +34,7 @@ Classes overview:
     http://en.wikipedia.org/wiki/Mealy_machine
 """
 
-__version__ = '0.00'
+__version__ = '0.01'
 
 MACHINES = dict()
 
@@ -165,7 +164,7 @@ class MooreMachine(Transducer):
     """Moore Machine."""
 
     def output(self, input_value):
-        """Return output assigned to the current state."""
+        """Return output value assigned to the current state."""
         return self.current_state.output_values[0][1]
 
 
