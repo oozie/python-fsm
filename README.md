@@ -51,7 +51,7 @@ graph = get_graph(tcpip)
 graph.draw('tcp.png', prog='dot')
 ```
 
-## Dublin City Council Parking Meter (2011) =
+## Dublin City Council Parking Meter (2011)
 ![Irish Park-o-meter](http://js-hosting.appspot.com/images/parking.png) 
 ```
 """A Moore Machine modeled on Dublin's City parking meters."""
@@ -80,3 +80,29 @@ await_action.update({'print': print_tkt,
 return_money[''] = print_tkt[''] = ready
 get_graph(parking_meter).draw('parking.png', prog='dot')
 ```
+## Binary Adder
+![Binary Adder](http://js-hosting.appspot.com/images/adder.png)
+```
+adder = MealyMachine('Binary addition')
+
+carry = State('carry')
+nocarry = State('no carry', initial=True)
+
+nocarry[(1, 0), 1] = nocarry
+nocarry[(0, 1), 1] = nocarry
+nocarry[(0, 0), 0] = nocarry
+nocarry[(1, 1), 0] = carry
+
+carry[(1, 1), 1] = carry
+carry[(0, 1), 0] = carry
+carry[(1, 0), 0] = carry
+carry[(0, 0), 1] = nocarry
+
+number1 = list(int (i) for i in '0001010')
+number2 = list(int (i) for i in '0001111')
+
+inputs = zip(number1, number2)
+
+print list(adder.process(inputs[::-1]))[::-1]
+```
+the code above will print [0, 0, 1, 1, 0, 0, 1] 
