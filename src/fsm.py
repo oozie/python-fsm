@@ -3,7 +3,6 @@
 This module can be used to build and describe finite-state automata.
 
     Author: Slawek Ligus <root@ooz.ie>
-    http://python.finitestatemachine.org/
 
 Overview of classes:
 
@@ -30,7 +29,7 @@ Overview of classes:
     http://en.wikipedia.org/wiki/Moore_machine
 
     MealyMachine -- another specialized transducer. Its output() method returns 
-        a value assigned to the transition that the input value caused.
+        a value assigned to the transition cause by the input value.
     http://en.wikipedia.org/wiki/Mealy_machine
 """
 
